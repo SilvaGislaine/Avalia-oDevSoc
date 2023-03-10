@@ -8,11 +8,23 @@
 		<link rel='stylesheet' href='webjars/bootstrap/5.1.3/css/bootstrap.min.css'>
 	</head>
 	<body class="bg-secondary">
+		
+	<div class="container">
+		<s:if test="telaEditar">
+			<s:url action="editarExames" var="editar">
+				<s:param name="exameVo.rowid" value="exameVo.rowid"></s:param>
+			</s:url>
+			<form action="${editar}">
+		</s:if>
+		<s:else>
+			<s:url action="novoExames" var="novo">
+				<s:param name="exameVo.rowid" value="rowid"></s:param>
+			</s:url>
+			<form action="${novo}">
+		</s:else>
 
-		<div class="container">
-			<s:form action="/novoExames.action">
 
-				<div class="card mt-5">
+		<div class="card mt-5">
 					<div class="card-header">
 						<div class="row">
 							<div class="col-sm-5">
@@ -21,7 +33,7 @@
 							</div>
 							
 							<div class="col-sm">
-								<h5 class="card-title">Novo Exame</h5>
+								<h5 class="card-title">${titulo}</h5>
 							</div>
 						</div>
 					</div>
@@ -55,7 +67,7 @@
 						</div>
 					</div>
 				</div>
-			</s:form>			
+			</form>			
 		</div>
 		
 		<script src="webjars/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>

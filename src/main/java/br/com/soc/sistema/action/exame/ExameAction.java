@@ -15,7 +15,10 @@ public class ExameAction extends Action {
 	private ExameBusiness business = new ExameBusiness();
 	private ExameFilter filtrar = new ExameFilter();
 	private ExameVo exameVo = new ExameVo();
+	private String titulo;
+	private boolean telaEditar = false;
 	
+
 	public String todos() {
 		exames.addAll(business.trazerTodosOsExames());	
 
@@ -32,6 +35,7 @@ public class ExameAction extends Action {
 	}
 	
 	public String novo() {
+		titulo = "Novo Exame";
 		if(exameVo.getNome() == null)
 			return INPUT;
 		
@@ -41,13 +45,26 @@ public class ExameAction extends Action {
 	}
 	
 	public String editar() {
+		titulo = "Editar Exame";
 		if(exameVo.getRowid() == null)
 			return REDIRECT;
 		
-		exameVo = business.buscarExamePor(exameVo.getRowid());
+		if (exameVo.getNome() != null) {
+			business.editarExame(exameVo);
+			return REDIRECT;
+
+		}
+		exameVo = business.buscarExamePorId(exameVo.getRowid());
 		
+		telaEditar = true;
 		return INPUT;
 	}
+	
+	public String excluir() {
+		business.excluirExame(exameVo.getRowid());
+
+		return REDIRECT;
+	    }
 	
 	public List<OpcoesComboBuscarExames> getListaOpcoesCombo(){
 		return Arrays.asList(OpcoesComboBuscarExames.values());
@@ -59,6 +76,14 @@ public class ExameAction extends Action {
 
 	public void setExames(List<ExameVo> exames) {
 		this.exames = exames;
+	}
+	
+	public String getTitulo() {
+		return titulo;
+	}
+	
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
 	}
 
 	public ExameFilter getFiltrar() {
@@ -76,4 +101,9 @@ public class ExameAction extends Action {
 	public void setExameVo(ExameVo exameVo) {
 		this.exameVo = exameVo;
 	}
+
+	public boolean isTelaEditar() {
+		return telaEditar;
+	}
+	
 }

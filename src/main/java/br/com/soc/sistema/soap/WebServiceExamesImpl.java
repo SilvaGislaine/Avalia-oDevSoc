@@ -15,6 +15,6 @@ public class WebServiceExamesImpl implements WebServiceExames {
 	
 	@Override
 	public String buscarExame(String codigo) {		
-		return business.buscarExamePor(codigo).toString();
+		return business.buscarExamePorId(codigo).toString();
 	}
 }
