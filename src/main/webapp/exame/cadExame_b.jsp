@@ -50,7 +50,6 @@
 								<td>${rowid}</td>
 								<td>${nome}</td>
 								<td class="text-end">
-								
 									<s:url action="editarExames" var="editar">
 										<s:param name="exameVo.rowid" value="rowid"></s:param>
 									</s:url>
@@ -59,9 +58,10 @@
 										<s:text name="label.editar"/>
 									</a>
 									
-								<s:url action="excluirExames" var="excluir">
-                 				   <s:param name="exameVo.rowid" value="rowid" ></s:param>
-                 				</s:url>
+									<s:url action="excluirExames" var="excluir">
+	                 				   <s:param name="exameVo.rowid" value="rowid" ></s:param>
+	                 				</s:url>
+	                 				
 									<a onclick="preparaExclusao(${rowid})" href="${excluir}" class="btn btn-danger" 
 									data-bs-toggle="modal" data-bs-target="#confirmarExclusao">
 										<s:text name="label.excluir"/>
