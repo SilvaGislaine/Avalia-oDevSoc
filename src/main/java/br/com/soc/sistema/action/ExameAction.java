@@ -1,4 +1,4 @@
-package br.com.soc.sistema.action.exame;
+package br.com.soc.sistema.action;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -18,7 +18,8 @@ public class ExameAction extends Action {
 	private String titulo;
 	private boolean telaEditar = false;
 	
-
+//Ações da tela
+	
 	public String todos() {
 		exames.addAll(business.trazerTodosOsExames());	
 

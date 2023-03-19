@@ -29,6 +29,7 @@
 								
 								<s:textfield cssClass="form-control" id="nome" name="filtrar.valorBusca"/>
 								<button class="btn btn-primary" type="submit"><s:text name="label.pesquisar"/></button>
+								
 						</div>
 					</s:form>			
 				</div>				
@@ -73,15 +74,21 @@
 					
 					<tfoot class="table-secondary">
 						<tr>
-							<td colspan="3">
+							<td>
 								<s:url action="novoExames" var="novo"/>
 								
 								<a href="${novo}" class="btn btn-success">
 									<s:text name="label.novo"/>
 								</a>
 							</td>
+							<td colspan="3" class="text-end">
+								<a href="/avaliacao" class="btn btn-dark" >
+									<s:text name="VOLTAR"/>
+									
+								</a>
+							</td>
 						</tr>
-					</tfoot>				
+					</tfoot>
 				</table>
 			</div>
 
@@ -101,6 +108,7 @@
 		        <input type="hidden" id="idExame" name="exameVo.rowid">
 		        
 		        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+		        
 		      </div>
 		      
 		      <div class="modal-body">
@@ -116,7 +124,9 @@
 	        	
 				<button id="excluir" class="btn btn-primary" type="submit" style="width: 75px;">
 					<s:text name="label.sim"/>
-				</button>						
+				</button>	
+				
+								
 		      </div>
 		      </s:form>
 		    </div>		    

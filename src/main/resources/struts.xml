@@ -12,16 +12,23 @@
 	<constant name="struts.action.excludePattern" value="/webjars/.*,/h2-console/*" />
 	
     <package name="br.com.soc.sistema" extends="struts-default" strict-method-invocation="false">
-        <action name="*Exames" class="br.com.soc.sistema.action.exame.ExameAction" method="{1}">
+        <action name="*Exames" class="br.com.soc.sistema.action.ExameAction" method="{1}">
         	<result name="success">/exame/cadExame_b.jsp</result>
             <result name="input">/exame/cadExame_i.jsp</result>
         	<result name="redirect" type="redirectAction">todosExames</result>
         </action>
         
-        <action name="*Funcionarios" class="br.com.soc.sistema.action.exame.FuncionarioAction" method="{1}">
+        <action name="*Funcionarios" class="br.com.soc.sistema.action.FuncionarioAction" method="{1}">
         	<result name="success">/funcionario/cadFuncionario_b.jsp</result>
             <result name="input">/funcionario/cadFuncionario_i.jsp</result>
         	<result name="redirect" type="redirectAction">todosFuncionarios</result>
+        </action>
+        
+        <action name="*ExamesFuncionario" class="br.com.soc.sistema.action.ExamesFuncionarioAction" method="{1}">
+            <result name="funcionarioExame">/examesFuncionario/cadExamesFuncionario_b.jsp</result>
+            <result name="listaExamesFuncionario">/examesFuncionario/cadExamesFuncionario.jsp</result>
+            <result name="input">/examesFuncionario/cadExamesFuncionario_i.jsp</result>
+        	<result name="redirect" type="redirectAction">todosExamesFuncionario</result>
         </action>
         
     </package>

@@ -3,7 +3,7 @@ package br.com.soc.sistema.business;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.com.soc.sistema.dao.exames.ExameDao;
+import br.com.soc.sistema.dao.ExameDao;
 import br.com.soc.sistema.exception.BusinessException;
 import br.com.soc.sistema.filter.ExameFilter;
 import br.com.soc.sistema.vo.ExameVo;
@@ -25,7 +25,7 @@ public class ExameBusiness {
 		try {
 			if (exameVo.getNome().isEmpty())
 				throw new IllegalArgumentException("Nome nao pode ser em branco");
-
+			
 			dao.insertExame(exameVo);
 		} catch (Exception e) {
 			throw new BusinessException("Nao foi possivel realizar a inclusao do registro");
@@ -66,6 +66,10 @@ public class ExameBusiness {
 	public void excluirExame(String codigo) {
 		try {
 			Integer cod = Integer.parseInt(codigo);
+			
+			if(new ExamesFuncionarioBusiness().isExameEmUso(codigo))
+				throw new BusinessException("Exame em uso");
+			
 			dao.excluirExame(cod);
 		} catch (NumberFormatException e) {
 			throw new BusinessException(FOI_INFORMADO_CARACTER_NO_LUGAR_DE_UM_NUMERO);
