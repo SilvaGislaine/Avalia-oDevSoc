@@ -17,15 +17,28 @@ body {
     
     <body>
 	    <div align="center " >
-	    <h1>Bem-vindo!</h1>
-	    
-	   <p>
-   		<a href="/avaliacao/todosExames.action"><button style="background: #069cc2; border-radius: 15px; padding: 15px; cursor: pointer; color: #fff; border: none; font-size: 18px;">Consultar exames</button></a>
-   	</p>
-		<a href="/avaliacao/todosFuncionarios.action"><button style="background: #046D87; border-radius: 15px; padding: 15px; cursor: pointer; color: #fff; border:none; font-size: 15px;">Consultar funcionários</button></a>
-		<p>
-		<a href="/avaliacao/todosExamesFuncionario.action"><button style="background:#034E61; border-radius: 15px; padding: 15px; cursor: pointer; color: #fff; border:none; font-size: 15px;">Exames do funcionário</button></a>
-	</p>
+		   <h1>Bem-vindo!</h1>
+		    
+		   <p>
+			   <a href="/avaliacao/todosExames.action">
+		   			<button style="background: #069cc2; border-radius: 15px; padding: 15px; cursor: pointer; color: #fff; border: none; font-size: 18px;">Consultar exames</button>
+		   		</a>
+	   		</p>
+	   		<p>
+				<a href="/avaliacao/todosFuncionarios.action">
+					<button style="background: #046D87; border-radius: 15px; padding: 15px; cursor: pointer; color: #fff; border:none; font-size: 15px;">Consultar funcionários</button>
+				</a>
+			</p>
+			<p>
+				<a href="/avaliacao/todosExamesFuncionario.action">
+					<button style="background:#034E61; border-radius: 15px; padding: 15px; cursor: pointer; color: #fff; border:none; font-size: 15px;">Exames do funcionário</button>
+				</a>
+			</p>
+			<p>
+				<a href="/avaliacao/iniciaRelatorio.action">
+					<button style="background:#034E61; border-radius: 15px; padding: 15px; cursor: pointer; color: #fff; border:none; font-size: 15px;">Relatório</button>
+				</a>
+			</p>
 		
 	    </div>
     </body>

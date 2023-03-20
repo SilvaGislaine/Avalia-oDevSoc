@@ -7,6 +7,7 @@ import br.com.soc.sistema.dao.ExameDao;
 import br.com.soc.sistema.exception.BusinessException;
 import br.com.soc.sistema.filter.ExameFilter;
 import br.com.soc.sistema.vo.ExameVo;
+//REGRAS DE NEGÓCIO
 
 public class ExameBusiness {
 

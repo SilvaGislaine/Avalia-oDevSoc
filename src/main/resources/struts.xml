@@ -31,6 +31,11 @@
         	<result name="redirect" type="redirectAction">todosExamesFuncionario</result>
         </action>
         
+        <action name="*Relatorio" class="br.com.soc.sistema.action.RelatorioAction" method="{1}">
+            <result name="input">/examesFuncionario/cadRelatorio_i.jsp</result>
+            <result name="success">/examesFuncionario/cadRelatorio.jsp</result>
+        </action>
+        
     </package>
 
 </struts>
